@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Trabalho</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <div class="nome">Brono Lanches</div>
+    </header>
+    <nav class="menu-box">
+        <ul class="menu">
+            <div class="menuitems">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Cardápio</a></li>
+            <li><a href="#">Restaurantes</a></li>
+            <li><a href="#">Pontos de Entrega</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+        </div>
+        </ul>
+    </nav>
+    <div class=fundo>
+        <div class="texto">
+        <h1>Bem-Vindo!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> 
+            sed do eiusmod tempor incididunt ut labore et dolore<br> 
+            magna aliqua. Lorem ipsum dolor sit amet consectetur<br> 
+            adipiscing elit duis. Sem integer vitae justo eget magna<br> 
+            fermentum iaculis. Neque volutpat ac tincidunt vitae<br> 
+            semper quis lectus nulla at. Blandit cursus risus at ultrices<br>
+            mi tempus imperdiet nulla. Eleifend mi in nulla posuere. <br>
+            Ac auctor augue mauris augue neque gravida in fermentum. <br>
+            Ut morbi tincidunt augue interdum velit euismod in. <br>
+            Ac turpis egestas integer eget aliquet nibh praesent tristique <br>
+            magna. Felis eget velit aliquet sagittis. Sed enim ut sem <br>
+            viverra aliquet eget sit amet tellus. Malesuada nunc vel risus <br>
+            commodo viverra maecenas accumsan. Lorem mollis aliquam <br>
+            ut porttitor. Scelerisque felis imperdiet proin fermentum leo vel.</p>
+        <form>
+        <input class="bt" type="button" value="Estou Interessado">
+        </form>
+        </div>
+        <div></div>
+    </div>
+    <h1 class="card">Veja nosso cardápio!</h1>
+    <section class="cardapio">
+        <div class="lanches">
+            <img src="images/pizza.png" alt="Pizza">
+            <p class="nome-lanches">Pizza</p>
+            <p class="preco">R$20!</p>
+        </div>
+        <div class="lanches">
+            <img src="images/f2.png" alt="Hamburguer">
+            <p class="nome-lanches">Hamburguer</p>
+            <p class="preco">R$14!</p>
+        </div>
+        <div class="lanches">
+            <img src="images/l-6914a2bb4f5945e096287835120c831e.png" alt="Coca-cola">
+            <p class="nome-lanches">Coca-Cola</p>
+            <p class="preco">R$14!</p>
+        </div>
+        <div class="lanches">
+            <img src="images/Guarana_Antarctica_500X500-270_BeboBreja.png" alt="Guaraná">
+            <p class="nome-lanches">Guaraná</p>
+            <p class="preco">R$10!</p>
+        </div>
+        <div class="lanches">
+            <img src="images/pastel-de-forno.png" alt="Pastel">
+            <p class="nome-lanches">Pastel</p>
+            <p class="preco">R$2!!</p>
+        </div>
+    </section>
+    <div class="formulario">
+        <div class="contato">
+            <h1 class="form-titulo">Fale conosco!</h1>
+            <form class="cliente" id="cliente">
+                <input type="text" id="nome_cliente" placeholder="Nome" maxlength="50" class="nome-cliente"><br><br>
+                <input type="tel" id="tel-cliente" placeholder ="Telefone" maxlength="10" class="tel-cliente" required="required"> <br><br>
+                <input type="email" id="email-cliente" placeholder ="cliente.lanche@meuemail.com" maxlength="100" class="email-cliente" required="required"> <br><br>
+                <textarea placeholder="Digite o motivo de seu contato" name="txtTexto" class="textao-cliente"></textarea><br><br>
+                <input class="bt1" type="button" value="Enviar" onclick="clicar()">
+            </form>
+            <script>
+
+                function clicar(){
+                    const nome = document.getElementById("nome_cliente").value
+                    const telefone = document.getElementById("tel-cliente").value
+                    const email = document.getElementById("email-cliente").value
+                    const contato = document.querySelector(".textao-cliente").value
+
+                    document.getElementById("nome_cliente").value = ""
+                    document.getElementById("tel-cliente").value = ""
+                    document.getElementById("email-cliente").value = ""
+                    document.querySelector(".textao-cliente").value = ""
+                    window.alert(`Mensagem enviada! Obrigado pelo contato, ${nome}!!`)
+                    console.log(`Nome: ${nome}, Telefone: ${telefone}, Email: ${email}, Mensagem: ${contato}`);
+                }
+                
+                document.addEventListener('DOMContentLoaded', function() {setTimeout(function() {
+                    const image = document.querySelector('.imagem-form img')
+                    image.classList.add('fadein')
+                }, 1000)})
+            </script>
+        </div>
+
+        <div class="imagem-form">
+            <img src="images/about-img.png">
+        </div>  
+    </div>
+</body>
+</html>
